@@ -1,0 +1,27 @@
+# Ignore JDBC Dependency
+# This demo puts 3 applicatons in the same project, so by default they all pick
+# up the JDBC Depdendency, but this application doesn't need it.
+spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+# Spring properties
+spring:
+  application:
+    name: web-service  # Identify this application
+
+# HTTP Server
+server.port: 3333   # HTTP (Tomcat) port
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${discovery.server.hostname}:1111/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
+
+# Integration with Microservices
+integration.listing.api.baseUrl: http://LISTING-SERVICE
+integration.user.api.baseUrl: http://USER-SERVICE
+
+# actuator access without security checks - DEVELOPEMENT ONLY
+management.endpoints.web.exposure.include: '*'
+  
