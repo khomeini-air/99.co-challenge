@@ -1,4 +1,4 @@
-# 99.co Code Challenge - Khomeini
+# Services
 
 For simplicity, I created required microservices in one single project.
 The microservices are:
@@ -30,4 +30,3 @@ All microservices API can be called using respective host/port as follows:
 * User services: http://localhost:4444
 * Web Services: http://localhost:3333
 
-The APIs are implemented exactly as stated in the [requirement](https://github.com/team99-exercise/99-python-exercise)
